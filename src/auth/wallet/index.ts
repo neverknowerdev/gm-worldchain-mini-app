@@ -36,6 +36,11 @@ export const walletAuth = async () => {
     console.log(result.finalPayload);
   }
 
+  console.log('nonce', nonce);
+  console.log('signedNonce', signedNonce);
+  console.log('result.finalPayload', result.finalPayload);
+  return;
+
   await signIn('credentials', {
     redirectTo: '/home',
     nonce,
