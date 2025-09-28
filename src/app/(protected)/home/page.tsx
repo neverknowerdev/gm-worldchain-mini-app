@@ -5,6 +5,7 @@ import { Transaction } from '@/components/Transaction';
 import { UserInfo } from '@/components/UserInfo';
 import { Verify } from '@/components/Verify';
 import { ViewPermissions } from '@/components/ViewPermissions';
+import { LogoutButton } from '@/components/LogoutButton';
 import { Marble, TopBar } from '@worldcoin/mini-apps-ui-kit-react';
 
 export default async function Home() {
@@ -22,6 +23,7 @@ export default async function Home() {
                 {session?.user.username}
               </p>
               <Marble src={session?.user.profilePictureUrl} className="w-12" />
+              <LogoutButton />
             </div>
           }
         />
