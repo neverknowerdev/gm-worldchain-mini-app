@@ -1,0 +1,58 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "walletAddress",
+                "type": "address"
+            }
+        ],
+        "name": "getUser",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "bool",
+                        "name": "userExist",
+                        "type": "bool"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "userIndex",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "twitterID",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isWorldchain",
+                        "type": "bool"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "mintedAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "userBalance",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "enum VerificationType",
+                        "name": "verificationType",
+                        "type": "uint8"
+                    }
+                ],
+                "internalType": "struct UserInfo",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
+]

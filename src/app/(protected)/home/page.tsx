@@ -1,10 +1,8 @@
 import { auth } from '@/auth';
 import { Page } from '@/components/PageLayout';
-import { UserInfo } from '@/components/UserInfo';
-import { Verify } from '@/components/Verify';
-import { ViewPermissions } from '@/components/ViewPermissions';
 import { LogoutButton } from '@/components/LogoutButton';
 import { Marble, TopBar } from '@worldcoin/mini-apps-ui-kit-react';
+import { HomeContent } from '@/components/HomeContent';
 
 export default async function Home() {
   const session = await auth();
@@ -27,9 +25,7 @@ export default async function Home() {
         />
       </Page.Header>
       <Page.Main className="flex flex-col items-center justify-start gap-4 mb-16">
-        <UserInfo />
-        <Verify />
-        <ViewPermissions />
+        <HomeContent walletAddress={session?.user.walletAddress || null} />
       </Page.Main>
     </>
   );
