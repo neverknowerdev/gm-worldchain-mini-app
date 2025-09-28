@@ -16,6 +16,8 @@ declare module 'next-auth' {
 
   interface Session {
     user: {
+      finalPayload: string;
+      nonce: string;
       walletAddress: string;
       username: string;
       profilePictureUrl: string;
@@ -31,7 +33,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   session: { strategy: 'jwt' },
   providers: [
     Credentials({
-      name: 'World App Wallet',
+      name: 'GM',
       credentials: {
         nonce: { label: 'Nonce', type: 'text' },
         signedNonce: { label: 'Signed Nonce', type: 'text' },
@@ -56,6 +58,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
         const finalPayload: MiniAppWalletAuthSuccessPayload =
           JSON.parse(finalPayloadJson);
+
+        console.log('finalPayload', finalPayload);
+        console.log('nonce', nonce);
         const result = await verifySiweMessage(finalPayload, nonce);
 
         if (!result.isValid || !result.siweMessageData.address) {
@@ -89,6 +94,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         session.user.walletAddress = token.address as string;
         session.user.username = token.username as string;
         session.user.profilePictureUrl = token.profilePictureUrl as string;
+        session.user.finalPayload = token.finalPayload as string;
+        session.user.nonce = token.nonce as string;
       }
 
       return session;
