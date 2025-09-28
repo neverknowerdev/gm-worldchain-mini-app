@@ -35,12 +35,12 @@ export async function GET(request: NextRequest) {
         }
 
         // Get environment variables
-        const rpcUrl = process.env.RPC_URL;
+        const rpcUrl = process.env.BASE_RPC_URL;
         const contractAddress = process.env.BASE_CONTRACT_ADDRESS as `0x${string}`;
 
         if (!rpcUrl) {
             return NextResponse.json(
-                { error: 'RPC_URL environment variable is not configured' },
+                { error: 'BASE_RPC_URL environment variable is not configured' },
                 { status: 500 }
             );
         }
@@ -117,12 +117,12 @@ export async function POST(request: NextRequest) {
         }
 
         // Get environment variables
-        const rpcUrl = process.env.RPC_URL;
+        const rpcUrl = process.env.BASE_RPC_URL;
         const contractAddress = process.env.BASE_CONTRACT_ADDRESS as `0x${string}`;
 
         if (!rpcUrl) {
             return NextResponse.json(
-                { error: 'RPC_URL environment variable is not configured' },
+                { error: 'BASE_RPC_URL environment variable is not configured' },
                 { status: 500 }
             );
         }
