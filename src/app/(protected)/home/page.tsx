@@ -9,7 +9,7 @@ import { Marble, TopBar } from '@worldcoin/mini-apps-ui-kit-react';
 
 export default async function Home() {
   const session = await auth();
-  console.log(session);
+  console.log('session', session);
 
   return (
     <>
