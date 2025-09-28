@@ -25,7 +25,7 @@ export default async function Home() {
         />
       </Page.Header>
       <Page.Main className="flex flex-col items-center justify-start gap-4 mb-16">
-        <HomeContent walletAddress={session?.user.walletAddress || null} />
+        <HomeContent walletAddress={session?.user.id || null} />
       </Page.Main>
     </>
   );
