@@ -1,0 +1,10 @@
+# Environment files - prevent Cursor from editing
+.env*
+
+# Other sensitive files
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+config/secrets/
