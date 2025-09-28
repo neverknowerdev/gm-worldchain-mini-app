@@ -27,6 +27,9 @@ export async function POST(req: NextRequest) {
     signal,
   )) as IVerifyResponse; // Wrapper on this
 
+  console.log('payload', payload);
+  console.log('action', action);
+  console.log('signal', signal);
   console.log('verifyRes', verifyRes);
 
   if (verifyRes.success) {
